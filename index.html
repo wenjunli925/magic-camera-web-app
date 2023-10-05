@@ -16,6 +16,12 @@
      crossorigin=""></script>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+    
     <script src="app.js"></script>
 
     <style>
@@ -26,7 +32,7 @@
 
   </head>
   <body>
-    <img src="" id="photo-web-cam" width="480px"/>
+    <!-- <img src="" id="photo-web-cam" width="480px"/>
 
     <canvas id="chart" width="800px" height="480px"></canvas>
 
@@ -36,14 +42,29 @@
       longitude: <span id="lon"></span>
     </p>
 
-    <div id="issMap"></div>
+    <div id="issMap"></div> -->
+    <div id="page-wrap">
+      <div id="content">
+        <h1>Magic Camera</h1>
+        <div id="media-container">
+          <div id="video-container"></div>
+          <div id="img-container"></div>
+        </div>  
+        <form action="" id="action-container">
+          <input type="submit" value="CAPTURE" class="action-button capture">
+          <input type="submit" value="AGAIN" class="action-button again">
+        </form>
+      </div>
+    </div>
+
+   
 
   </body>
 
 
 
   <script>
-    showMap();
+    // showMap();
 
 
     // chartIt();
