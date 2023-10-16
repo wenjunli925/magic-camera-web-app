@@ -36,10 +36,14 @@
           <div id="video-container"></div>
           <!-- <div id="img-container"></div> -->
         </div>  
-        <form action="" id="action-container">
-          <input type="submit" value="CAPTURE" class="action-button capture">
+        <!-- <form action="" id="action-container">
+          <input type="submit" value="CAPTURE" class="action-button capture" onclick="postData()">
           <input type="submit" value="AGAIN" class="action-button again">
-        </form>
+        </form> -->
+        <div id="action-container">
+          <input type="submit" value="CAPTURE" class="action-button capture" onclick="postData()"> 
+          <input type="submit" value="AGAIN" class="action-button again">
+        </div>
       </div>
     </div>
   </body>
@@ -75,7 +79,8 @@
       console.log(json); 
     }
     
-     postData();
+
+     
     
     
     
