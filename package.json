@@ -1,0 +1,15 @@
+{
+  "name": "magic-camera-web-app",
+  "version": "1.0.0",
+  "description": "This is a web version of Magic Camera by our  legendary Darius",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wenjun Li",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}

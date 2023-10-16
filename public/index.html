@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Magic Camera</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+     crossorigin=""></script> -->
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,33 +22,19 @@
     
     <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
     
-    <script src="app.js"></script>
+    <!-- <script src="../app.js"></script> -->
 
     <style>
-      #issMap {
-        height: 600px;
-      }
     </style> 
 
   </head>
   <body>
-    <!-- <img src="" id="photo-web-cam" width="480px"/>
-
-    <canvas id="chart" width="800px" height="480px"></canvas>
-
-    <h1>Where is the ISS?</h1>
-    <p>
-      latitude: <span id="lat"></span><br/>
-      longitude: <span id="lon"></span>
-    </p>
-
-    <div id="issMap"></div> -->
     <div id="page-wrap">
       <div id="content">
         <h1>Magic Camera</h1>
         <div id="media-container">
           <div id="video-container"></div>
-          <div id="img-container"></div>
+          <!-- <div id="img-container"></div> -->
         </div>  
         <form action="" id="action-container">
           <input type="submit" value="CAPTURE" class="action-button capture">
@@ -56,19 +42,41 @@
         </form>
       </div>
     </div>
-
-   
-
   </body>
 
-
-
   <script>
-    // showMap();
 
+    // p5
+    function setup() {
+      noCanvas();
+      const video = createCapture(VIDEO);
+      video.size(1080, 600);
+      video.parent("video-container");
+    }
 
-    // chartIt();
+    
 
+    async function postData() {
+      const name = 111;
+      const sex = 222;
+      // const data = { "name": "wenjun", "sex": "female" };
+      const data = { name, sex };
+      
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      };
+
+      const response = await fetch('/api', options);
+      const json = await response.json(); 
+      console.log(json); 
+    }
+    
+     postData();
+    
     
     
   </script>
