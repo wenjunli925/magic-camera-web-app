@@ -4,7 +4,7 @@ const Datastore = require('nedb');
 const app = express();
 app.listen(3000, () => console.log("listening at 3000"));
 app.use(express.static("public"));
-app.use(express.json());
+app.use(express.json({limit: '2MB'}));
 
 const database = new Datastore('database.db');
 database.loadDatabase();
@@ -16,8 +16,7 @@ app.post('/api', (request, response) => {
   console.log(data);
   response.json({
     status: 'success',
-    name: request.body.name,
-    sex: request.body.sex
+    image: request.body.image64,
   });
 }); 
 
